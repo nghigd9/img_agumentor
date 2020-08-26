@@ -2,6 +2,7 @@ import os
 from glob import glob
 import random
 import cv2
+import imutils
 
 # Cách1
 def add_boder(image_path, output_path, low, high):
@@ -40,6 +41,17 @@ def change_brightness(image_path, output_path, value):
     img = cv2.cvtColor(final_hsv, cv2.COLOR_HSV2BGR)
     
     cv2.imwrite(output_path, img)
+
+def rotate_image(image_path, range_angle, output_path):
+    """
+    range_angle: Khoảng góc quay
+    """
+    image = cv2.imread(image_path)
+    #lựa chọn ngẫu nhiên góc quay 
+    angle = random.randint(-range_angle, range_angle)
+    
+    img_rot = imutils.rotate(image, angle)
+    cv2.imwrite(output_path, img_rot)
 
 
 
