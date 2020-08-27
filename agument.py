@@ -42,26 +42,30 @@ def change_brightness(image_path, output_path, value):
     
     cv2.imwrite(output_path, img)
 
+
+
 def rotate_image(image_path, range_angle, output_path):
     """
     range_angle: Khoảng góc quay
     """
     image = cv2.imread(image_path)
     #lựa chọn ngẫu nhiên góc quay 
-    angle = random.randint(-range_angle, range_angle)
+    angle = random.randint(-10, 5)
     
     img_rot = imutils.rotate(image, angle)
     cv2.imwrite(output_path, img_rot)
 
 
-
-input_dir = 'bien_so_car_long_test'
+input_dir = 'square_1'
 imgs_paths = glob('%s/*.jpg' % input_dir)
 
 print('start')
 for img_path in imgs_paths:
-	base = img_path.split('.')[0]
-	out = base + '_margin.jpg'
-	add_boder(img_path, out, 50, 175)
-	print(out)
+    base = img_path[:-4]
+    print(base)
+    out = base + '_dec20.jpg'
+    #rotate_image(img_path, 0, out)
+    # change_brightness(img_path, out, 25)
+    # add_boder(img_path, out, 350, 500)
+    print(out)
 	
