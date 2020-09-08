@@ -1,6 +1,6 @@
 from glob import glob
 
-input_dir = 'square_1'
+input_dir = 'long_10'
 
 txt_paths = glob('%s/*.txt' % input_dir)
 

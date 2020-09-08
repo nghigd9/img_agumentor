@@ -50,22 +50,22 @@ def rotate_image(image_path, range_angle, output_path):
     """
     image = cv2.imread(image_path)
     #lựa chọn ngẫu nhiên góc quay 
-    angle = random.randint(-10, 5)
+    angle = random.randint(-15, 15)
     
     img_rot = imutils.rotate(image, angle)
     cv2.imwrite(output_path, img_rot)
 
 
-input_dir = 'square_1'
+input_dir = 'long_10'
 imgs_paths = glob('%s/*.jpg' % input_dir)
 
 print('start')
 for img_path in imgs_paths:
     base = img_path[:-4]
     print(base)
-    out = base + '_dec20.jpg'
-    #rotate_image(img_path, 0, out)
-    # change_brightness(img_path, out, 25)
-    # add_boder(img_path, out, 350, 500)
+    out = base + '_brightness.jpg'
+    # rotate_image(img_path, 0, out)
+    change_brightness(img_path, out, 25)
+    #add_boder(img_path, out, 150, 250)
     print(out)
 	

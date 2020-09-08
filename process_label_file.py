@@ -2,7 +2,7 @@ from glob import glob
 import os
 import shutil
 
-input_dir = 'square_1'
+input_dir = 'long_10'
 
 txt_paths = glob('%s/*.txt' % input_dir)
 for txt_path in txt_paths:
@@ -11,7 +11,7 @@ for txt_path in txt_paths:
     print(base)
 
     # brightness label
-    new_path = base + '_dec20.txt'
+    new_path = base + '_brightness.txt'
     print(new_path)
     with open(txt_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
