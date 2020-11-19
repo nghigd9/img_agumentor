@@ -47,12 +47,12 @@ Mirrors the image around a horizontal line running through its center
 <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw.png" alt="Original Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__flipv.png" alt="Flipped Image" width="150" height="150"/>
 
 #### Noise
+
     python main.py ./my_images noise_0.01 noise_0.02 noise_0.05
 
 <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw.png" alt="Original Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__noise0.01.png" alt="Noisy Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__noise0.02.png" alt="Noisy Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__noise0.05.png" alt="Noisy Image" width="150" height="150"/>
 
 #### Rotate
-Rotates the image. The angle of rotation is specified by an integer value that is included in the transform argument
 
     python main.py ./my_images rot_90 rot_180 rot_-90
 
@@ -65,6 +65,7 @@ Rotates the image. The angle of rotation is specified by an integer value that i
 <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw.png" alt="Original Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__trans20_20.png" alt="Translated Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__trans0_100.png" alt="Translated Image" width="150" height="150"/>
 
 #### Zoom/Stretch
+
     python main.py ./my_images zoom_150_0_300_150 zoom_0_50_300_150 zoom_200_0_300_300
 
 <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw.png" alt="Original Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__zoom150_0_300_150.png" alt="Zoomed Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__zoom0_50_300_150.png" alt="Stretched Image" width="150" height="150"/> &nbsp; &nbsp; &nbsp; <img style="border: 1px solid grey" src="http://codebox.net/assets/images/image-augmentation-with-python/macaw__zoom200_0_300_300.png" alt="Stretched Image" width="150" height="150"/>

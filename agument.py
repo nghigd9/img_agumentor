@@ -3,6 +3,7 @@ from glob import glob
 import random
 import cv2
 import imutils
+import sys
 
 # Cách1
 def add_boder(image_path, output_path, low, high):
@@ -50,22 +51,30 @@ def rotate_image(image_path, range_angle, output_path):
     """
     image = cv2.imread(image_path)
     #lựa chọn ngẫu nhiên góc quay 
-    angle = random.randint(-15, 15)
+    angle = random.randint(-20, 20)
     
     img_rot = imutils.rotate(image, angle)
     cv2.imwrite(output_path, img_rot)
 
 
-input_dir = 'long_10'
-imgs_paths = glob('%s/*.jpg' % input_dir)
+input_dir = 'truck'
+imgs_paths = glob('%s/*.jpg' % input_dir) +  glob('%s/*.png' % input_dir)
+# imgs_paths = glob('%s/*.jpg' % input_dir)
 
 print('start')
+count = 0
 for img_path in imgs_paths:
-    base = img_path[:-4]
-    print(base)
-    out = base + '_brightness.jpg'
-    # rotate_image(img_path, 0, out)
-    change_brightness(img_path, out, 25)
-    #add_boder(img_path, out, 150, 250)
-    print(out)
+    count += 1
+    if count % 4 == 0:
+        base = img_path[:-4]
+        print(base)
+        # out_border = base + '_boder_75_125.png'
+        # add_boder(img_path, out_border, 75, 125)
+
+        # out_rotate = base + '_rot20.png'
+        # rotate_image(img_path, 0, out_rotate)
+
+        out_br = base + '_brightness50.png'
+        change_brightness(img_path, out_br, 50)
+print(len(imgs_paths))
 	
